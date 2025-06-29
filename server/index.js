@@ -6,7 +6,7 @@ import productRouter from './routes/product.js'
 
 const app = express()
 app.use(cors({
-    origin:['http://localhost:3000', 'https://inventory-management-system-kappa-three.vercel.app/'],
+    origin:['http://localhost:3000', 'https://inventory-management-system-kappa-three.vercel.app'],
     credentials:true
 }))
 app.use(express.json())
