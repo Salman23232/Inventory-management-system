@@ -24,10 +24,13 @@ export default function SignupPage() {
       await signup(form)
       toast.success('Signup successful!' )
       router.push('/login')
-    } catch (error: any) {
-        toast.error(error.response?.data?.message )
-
-    } finally {
+    } catch (error: unknown) {
+  const message =
+    error instanceof Error
+      ? error.message
+      : 'An unexpected error occurred'
+  toast.error(message)
+} finally {
       setLoading(false)
     }
   }

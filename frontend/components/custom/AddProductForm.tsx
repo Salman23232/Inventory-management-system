@@ -20,7 +20,6 @@ import {
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
-import { Toaster } from '../ui/sonner'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 
@@ -84,10 +83,13 @@ const AddProductForm = () => {
       toast.success('Success',)
       resetForm()
       router.push('/products')
-    } catch (e) {
-      toast.error(
-'Failed to add product.',)
-    } finally {
+    } catch (error: unknown) {
+  const message =
+    error instanceof Error
+      ? error.message
+      : 'An unexpected error occurred'
+  toast.error(message)
+} finally {
       setLoading(false)
     }
   }
