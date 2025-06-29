@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8000/api/user'
+const API_URL = 'https://inventory-management-system-hwp1.onrender.com/api/user'
 
 export const signup = async (data: { name: string; email: string; password: string }) => {
   const res = await axios.post(`${API_URL}/signup`, data, { withCredentials: true })

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8000/api/product' // Your Express backend
+const API_URL = 'https://inventory-management-system-hwp1.onrender.com/api/product' // Your Express backend
 
 // Get all categories
 export const fetchCategories = async () => {
