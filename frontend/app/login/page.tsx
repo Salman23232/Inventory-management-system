@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { toast } from 'sonner'
 import { login } from '@/service/apiAuth'
 import { useAuthStore } from '@/store/authStore'
+import Link from 'next/link'
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: '', password: '' })
@@ -79,6 +80,10 @@ export default function LoginPage() {
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? 'Logging in...' : 'Login'}
             </Button>
+            <p className='text-center'>
+              Do not have an account?
+              <Link href='/sign-up' className='text-blue-500' > Sign up</Link>
+              </p>
           </form>
         </CardContent>
       </Card>

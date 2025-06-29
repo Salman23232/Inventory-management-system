@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { toast } from 'sonner'
 import { signup } from '@/service/apiAuth'
+import Link from 'next/link'
 
 export default function SignupPage() {
   const [form, setForm] = useState({ name: '', email: '', password: '' })
@@ -87,7 +88,10 @@ export default function SignupPage() {
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? 'Signing up...' : 'Sign Up'}
+              
             </Button>
+                          Already have an account?
+              <Link href='/login' className='text-blue-500' > Login</Link>
           </form>
         </CardContent>
       </Card>
