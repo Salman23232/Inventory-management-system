@@ -32,7 +32,7 @@ export default function AddCategoryForm() {
   const onSubmit = async (data: CategoryFormValues) => {
     try {
       setLoading(true)
-      await axios.post('http://localhost:8000/api/product/add-category', data)
+      await axios.post('https://inventory-management-system-hwp1.onrender.comapi/product/add-category', data)
       toast.success( 'Category added successfully!')
       reset()
     } catch (error) {
